@@ -2,18 +2,11 @@
   <div
     v-on="$listeners"
     class="j-list-item flex justify-start align-center"
-<<<<<<< HEAD
     :class="{ 'is-link': link || to, 'is-no-icon': noIcon, 'is-active': active }"
     :style="{
       height: `${parseInt(height)}px !important`,
     }"
     @click="activate"
-=======
-    :class="{ 'is-link': link || to }"
-    :style="{
-      height: `${parseInt(height)}px !important`,
-    }"
->>>>>>> 1f14aba... 1
   >
     <slot></slot>
   </div>
@@ -29,7 +22,6 @@ export default {
     link: { type: Boolean, default: false },
     // 跳转路由
     to: { type: String | Object, default: undefined },
-<<<<<<< HEAD
     noIcon: { type: Boolean, default: false },
   },
   data() {
@@ -55,8 +47,6 @@ export default {
     this.$Eventbus.$on("list-item-to", () => {
       this.deActivate();
     });
-=======
->>>>>>> 1f14aba... 1
   },
 };
 </script>
@@ -75,15 +65,12 @@ export default {
   -webkit-user-select: none;
   -ms-user-select: none;
 
-<<<<<<< HEAD
   @include when(no-icon) {
     @include b(list-item-content) {
       margin-left: 48px;
     }
   }
 
-=======
->>>>>>> 1f14aba... 1
   /* 背景 */
   &::before {
     content: "";
@@ -110,7 +97,6 @@ export default {
   /* ACTIVE */
   @include when(active) {
     color: $color-primary;
-<<<<<<< HEAD
     &::before {
       background-color: $color-primary;
       opacity: 0.12;
@@ -121,8 +107,6 @@ export default {
   @include b(list-item-content) {
     flex: 1 1 100%;
     text-align: start;
-=======
->>>>>>> 1f14aba... 1
   }
 
   /* TITLE */

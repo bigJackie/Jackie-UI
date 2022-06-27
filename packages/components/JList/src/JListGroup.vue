@@ -1,14 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <div
-    ref="j-list-group"
-    v-on="$listeners"
-    class="j-list-group flex flex-column"
-    :style="{ '--content-height': `${content_height}px` }"
-  >
-=======
-  <div class="j-list-group flex flex-column" :style="{ '--content-height': `${content_height}px` }">
->>>>>>> 1f14aba... 1
+  <div v-on="$listeners" class="j-list-group flex flex-column" :style="{ '--content-height': `${content_height}px` }">
     <div class="j-list-item__head" v-if="$slots.head" @click="isExpanded = !isExpanded">
       <slot name="head"></slot>
     </div>
@@ -19,13 +10,9 @@
       @click="isExpanded = !isExpanded"
     >
       <j-list-item-icon v-show="prependIcon" :name="prependIcon"></j-list-item-icon>
-<<<<<<< HEAD
       <j-list-item-content>
         <j-list-item-title v-show="title">{{ title }}</j-list-item-title>
       </j-list-item-content>
-=======
-      <j-list-item-title v-show="title">{{ title }}</j-list-item-title>
->>>>>>> 1f14aba... 1
       <j-list-item-icon
         class="j-list-group-icon__append"
         :class="{ 'is-expand': isExpanded }"
@@ -33,11 +20,7 @@
         :name="appendIcon"
       ></j-list-item-icon>
     </j-list-item>
-<<<<<<< HEAD
     <div class="j-list-group__content" :class="{ 'is-expand': isExpanded, 'is-disabled': disabled }">
-=======
-    <div class="j-list-group__content" :class="{ 'is-expand': isExpanded }">
->>>>>>> 1f14aba... 1
       <slot></slot>
     </div>
   </div>
@@ -47,7 +30,6 @@
 export default {
   name: "JListGroup",
   props: {
-<<<<<<< HEAD
     selected: { type: Number, default: undefined },
     prependIcon: { type: String, default: "" },
     appendIcon: { type: String, default: "chevron-down" },
@@ -55,26 +37,11 @@ export default {
     disabled: { type: Boolean, default: false },
     autoFold: { type: Boolean, default: false },
     singleGroup: { type: Boolean, default: false },
-=======
-    prependIcon: {
-      type: String,
-      default: "",
-    },
-    appendIcon: {
-      type: String,
-      default: "chevron-down",
-    },
-    title: {
-      type: String,
-      default: "",
-    },
->>>>>>> 1f14aba... 1
   },
   data() {
     return {
       isExpanded: false,
       content_height: 0,
-<<<<<<< HEAD
       single: false,
     };
   },
@@ -86,22 +53,11 @@ export default {
           parseInt(getComputedStyle(children[i].elm).marginBottom) +
           parseInt(getComputedStyle(children[i].elm).marginTop);
         this.content_height += children[i].elm.getBoundingClientRect().height + margin;
-=======
-    };
-  },
-  methods: {
-    getHeight() {
-      let children = this.$slots.default;
-      for (let i = 0; i < children.length; i++) {
-        this.content_height += children[i].elm.getBoundingClientRect().height;
->>>>>>> 1f14aba... 1
         if (children[i].componentInstance)
           if (children[i].componentInstance.$data.content_height) {
             this.content_height += children[i].componentInstance.$data.content_height;
           }
       }
-<<<<<<< HEAD
-
       if (this.singleGroup) {
         let children = this.$children;
         for (let i = 0; i < children.length; i++) {
@@ -138,21 +94,11 @@ export default {
   },
   mounted() {
     this.init();
-=======
-    },
-  },
-  mounted() {
-    this.getHeight();
->>>>>>> 1f14aba... 1
   },
 };
 </script>
 
-<<<<<<< HEAD
 <style lang="scss">
-=======
-<style lang="scss" scoped>
->>>>>>> 1f14aba... 1
 @include b(list-group) {
   /* 禁用选择 */
   user-select: none;
@@ -174,10 +120,6 @@ export default {
           }
         }
       }
-<<<<<<< HEAD
-=======
-
->>>>>>> 1f14aba... 1
       /* HOVER */
       &:hover {
         &::before {
@@ -210,8 +152,6 @@ export default {
       max-height: var(--content-height);
       transition: all 0.2s ease-in-out;
     }
-<<<<<<< HEAD
-
     /* DISABLED */
     @include when(disabled) {
       @include b(list-item) {
@@ -223,8 +163,6 @@ export default {
         }
       }
     }
-=======
->>>>>>> 1f14aba... 1
   }
 }
 </style>
