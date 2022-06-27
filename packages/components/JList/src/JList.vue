@@ -1,5 +1,6 @@
 <template>
   <div
+    v-on="$listeners"
     class="j-list flex flex-column"
     :class="[
       {
@@ -57,15 +58,39 @@ export default {
     maxWidth: { type: Number | String, default: undefined },
     // 最小宽度
     minWidth: { type: Number | String, default: undefined },
+    // List-group 唯一
+    singleGroup: { type: Boolean, default: false },
+  },
+  methods: {
+    init() {
+      if (this.singleGroup) {
+        let children = this.$children;
+        for (let i = 0; i < children.length; i++) {
+          children[i].$data.single = true;
+          console.log(children[i].$data.single);
+        }
+      }
+    },
+  },
+  mounted() {
+    this.init();
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @include b(list) {
+  box-sizing: border-box;
+
+  @include b(list-item) {
+    &::before {
+      border-radius: #{map-get($border-radius-breakpoints, "sm")}px !important;
+    }
+  }
   /* dense */
   @include when(dense) {
     @include b(list-item) {
+      height: 40px;
     }
   }
   /* disabled */
@@ -78,17 +103,41 @@ export default {
     @include b(list-item) {
     }
   }
+
   /* nav */
   @include when(nav) {
+    padding: 4px 8px 0;
     @include b(list-item) {
+      box-sizing: border-box;
+      height: 36px;
+      margin-bottom: 4px;
+      &:last-child {
+        margin: 0;
+      }
+      @include e(head) {
+        margin: 0;
+      }
     }
   }
+
+  /* FLAT */
+  @include when(flat) {
+    @include b(list-item) {
+      &::before {
+        border-radius: #{map-get($border-radius-breakpoints, 0)}px !important;
+      }
+    }
+  }
+
   /* rounded */
   @include when(rounded) {
     @include b(list-item) {
-      border-radius: #{map-get($border-radius-breakpoints, "pill")}px !important;
+      &::before {
+        border-radius: #{map-get($border-radius-breakpoints, "pill")}px !important;
+      }
     }
   }
+
   /* shaped */
   @include when(shaped) {
     @include b(list-item) {

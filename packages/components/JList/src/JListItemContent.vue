@@ -1,25 +1,17 @@
 <template>
-  <div class="j-list-item-title">
-    <span class="j-list-item-title__text">
-      <slot></slot>
-    </span>
+  <div class="j-list-item-content">
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: "JListItemTitle",
+  name: "JListItemContent",
 };
 </script>
 
-<style lang="scss" scoped>
-@include b(list-item-text) {
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 600;
-  @include e(text) {
-    // transform: translateY(-1px);
-  }
+<style lang="scss">
+@include b(list-item-content) {
+  box-sizing: border-box;
 }
 </style>
