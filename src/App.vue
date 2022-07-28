@@ -65,6 +65,13 @@ export default {
   },
 };
 </script>
+=======
+    <router-view />
+  </j-app>
+</template>
+
+<script></script>
+>>>>>>> 1f14aba... 1
 
 <style lang="scss">
 body {

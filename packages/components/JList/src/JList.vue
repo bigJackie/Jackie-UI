@@ -1,6 +1,9 @@
 <template>
   <div
+<<<<<<< HEAD
     v-on="$listeners"
+=======
+>>>>>>> 1f14aba... 1
     class="j-list flex flex-column"
     :class="[
       {
@@ -58,6 +61,7 @@ export default {
     maxWidth: { type: Number | String, default: undefined },
     // 最小宽度
     minWidth: { type: Number | String, default: undefined },
+<<<<<<< HEAD
     // List-group 唯一
     singleGroup: { type: Boolean, default: false },
   },
@@ -74,10 +78,13 @@ export default {
   },
   mounted() {
     this.init();
+=======
+>>>>>>> 1f14aba... 1
   },
 };
 </script>
 
+<<<<<<< HEAD
 <style lang="scss">
 @include b(list) {
   box-sizing: border-box;
@@ -91,6 +98,13 @@ export default {
   @include when(dense) {
     @include b(list-item) {
       height: 40px;
+=======
+<style lang="scss" scoped>
+@include b(list) {
+  /* dense */
+  @include when(dense) {
+    @include b(list-item) {
+>>>>>>> 1f14aba... 1
     }
   }
   /* disabled */
@@ -103,6 +117,7 @@ export default {
     @include b(list-item) {
     }
   }
+<<<<<<< HEAD
 
   /* nav */
   @include when(nav) {
@@ -138,6 +153,19 @@ export default {
     }
   }
 
+=======
+  /* nav */
+  @include when(nav) {
+    @include b(list-item) {
+    }
+  }
+  /* rounded */
+  @include when(rounded) {
+    @include b(list-item) {
+      border-radius: #{map-get($border-radius-breakpoints, "pill")}px !important;
+    }
+  }
+>>>>>>> 1f14aba... 1
   /* shaped */
   @include when(shaped) {
     @include b(list-item) {
