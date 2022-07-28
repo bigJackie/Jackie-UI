@@ -1,0 +1,65 @@
+$flex-size-breakpoints: (
+  undefined: "",
+  xs: "xs-",
+  sm: "sm-",
+  md: "md-",
+  lg: "lg-",
+  xl: "xl-",
+);
+$flex-direction-breckpoints: ("row", "row-reverse", "column", "column-reverse");
+
+$flex-justify-breakpoints: (
+  start: "flex-start",
+  end: "flex-end",
+  center: "center",
+  space-between: "space-between",
+  space-around: "space-around",
+  space-evenly: "space-evenly",
+);
+
+$flex-align-breakpoints: (
+  start: "flex-start",
+  end: "flex-end",
+  center: "center",
+  baseline: "baseline",
+  stretch: "stretch",
+);
+
+@include b(application) {
+  @each $size_name, $size_item in $flex-size-breakpoints {
+    @media only screen and (max-width: getBreakPoint($size_name)) and (min-width: getBreakPointSmall($size_name)) {
+      /* FLEX */
+      .#{$size_item}flex {
+        display: flex !important;
+      }
+
+      /* INLINE-FLEX */
+      .#{$size_item}inline-flex {
+        display: inline-flex !important;
+      }
+
+      /* FLEX-DIRECTION */
+      @each $direction in $flex-direction-breckpoints {
+        .flex-#{$size_item}#{$direction} {
+          flex-direction: #{$direction} !important;
+        }
+      }
+
+      /* JUSTIFY-CONTENT */
+      @each $justify_name, $justify_item in $flex-justify-breakpoints {
+        .justify-#{$size_item}#{$justify_name} {
+          justify-content: #{$justify_item} !important;
+        }
+      }
+
+      /* ALIGN-ITEMS */
+      @each $align_name, $align_item in $flex-align-breakpoints {
+        .align-#{$size_item}#{$align_name} {
+          align-items: #{$align_item} !important;
+        }
+      }
+    }
+  }
+
+  /* JUSTIFY-CONTENT */
+}

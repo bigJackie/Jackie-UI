@@ -1,0 +1,49 @@
+$xs: 375px !default;
+$sm: 640px !default;
+$md: 768px !default;
+$lg: 1024px !default;
+$xl: 9999px !default;
+
+@function getBreakPoint($size) {
+  @if $size == xs {
+    @return $xs;
+  } @else if($size == sm) {
+    @return $sm;
+  } @else if($size == md) {
+    @return $md;
+  } @else if($size == lg) {
+    @return $lg;
+  } @else if($size == xl) {
+    @return $xl;
+  } @else {
+    @return 9999px;
+  }
+}
+
+@function getBreakPointSmall($size) {
+  @if $size == sm {
+    @return $xs;
+  } @else if($size == md) {
+    @return $sm;
+  } @else if($size == lg) {
+    @return $md;
+  } @else if($size == xl) {
+    @return $lg;
+  } @else {
+    @return 0px;
+  }
+}
+
+@function getBreakPointLarge($size) {
+  @if $size == xs {
+    @return $sm;
+  } @else if($size == sm) {
+    @return $md;
+  } @else if($size == md) {
+    @return $lg;
+  } @else if($size == lg) {
+    @return $xl;
+  } @else {
+    @return 9999px;
+  }
+}

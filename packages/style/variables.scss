@@ -1,0 +1,31 @@
+/* Global */
+@import "./elevation.scss";
+@import "./breakpoints.scss";
+@import "./borderradius.scss";
+@import "./font.scss";
+@import "./flexbox.scss";
+
+/* Theme */
+$font-color: rgba(0, 0, 0, 0.54);
+$color-primary: #1867c0;
+$color-hover: #000000de;
+
+/* Header */
+$header-padding: 0 20px !default;
+
+/* Footer */
+$footer-padding: 0 20px !default;
+
+/* Main */
+$main-padding: 20px !default;
+
+/* AppBar */
+$app-bar-border-radius: 0 !default;
+$app-bar-elevation: 4 !default;
+$app-bar-scrolled-title-padding-bottom: 9px !default;
+
+/* NavigationBar */
+// $navigation-drawer-border-width: 1px !default;
+
+/* Icon */
+$icon-color: rgba(0, 0, 0, 0.54) !default;
