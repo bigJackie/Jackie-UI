@@ -6,9 +6,9 @@ $flex-size-breakpoints: (
   lg: "lg-",
   xl: "xl-",
 );
-$flex-direction-breckpoints: ("row", "row-reverse", "column", "column-reverse");
+$flex-direction-items: ("row", "row-reverse", "column", "column-reverse");
 
-$flex-justify-breakpoints: (
+$flex-justify-items: (
   start: "flex-start",
   end: "flex-end",
   center: "center",
@@ -17,7 +17,7 @@ $flex-justify-breakpoints: (
   space-evenly: "space-evenly",
 );
 
-$flex-align-breakpoints: (
+$flex-align-items: (
   start: "flex-start",
   end: "flex-end",
   center: "center",
@@ -39,21 +39,21 @@ $flex-align-breakpoints: (
       }
 
       /* FLEX-DIRECTION */
-      @each $direction in $flex-direction-breckpoints {
+      @each $direction in $flex-direction-items {
         .flex-#{$size_item}#{$direction} {
           flex-direction: #{$direction} !important;
         }
       }
 
       /* JUSTIFY-CONTENT */
-      @each $justify_name, $justify_item in $flex-justify-breakpoints {
+      @each $justify_name, $justify_item in $flex-justify-items {
         .justify-#{$size_item}#{$justify_name} {
           justify-content: #{$justify_item} !important;
         }
       }
 
       /* ALIGN-ITEMS */
-      @each $align_name, $align_item in $flex-align-breakpoints {
+      @each $align_name, $align_item in $flex-align-items {
         .align-#{$size_item}#{$align_name} {
           align-items: #{$align_item} !important;
         }

@@ -58,6 +58,7 @@ export default {
   position: relative;
   box-sizing: border-box;
   padding: 0 16px;
+  white-space: nowrap;
 
   /* 禁用选择 */
   user-select: none;

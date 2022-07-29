@@ -13,6 +13,9 @@ import JScorll from "components/JButton";
 
 import JList from "components/JList";
 
+/* Doc */
+import JDoc from "components/JDoc";
+
 import Vue from "vue";
 import JDebugger from "../packages/utils/debugger";
 Vue.prototype.$debugger = new JDebugger();
@@ -34,6 +37,7 @@ const components = [
   JButton,
   JScorll,
   JList,
+  JDoc,
 ];
 
 const install = function (Vue) {
@@ -61,5 +65,21 @@ export default {
   JButton,
   JScorll,
   JList,
+  JDoc,
 };
-export { JApp, JContainer, JHeader, JMain, JFooter, JAside, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JList };
+
+export {
+  JApp,
+  JContainer,
+  JHeader,
+  JMain,
+  JFooter,
+  JAside,
+  JAppBar,
+  JNavigationBar,
+  JIcon,
+  JButton,
+  JScorll,
+  JList,
+  JDoc,
+};

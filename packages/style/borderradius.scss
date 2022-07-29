@@ -1,4 +1,4 @@
-$border-radius-breakpoints: (
+$border-radius-items: (
   0: "0",
   xs: "2",
   sm: "4",
@@ -10,7 +10,7 @@ $border-radius-breakpoints: (
 );
 
 @include b(application) {
-  @each $name, $size in $border-radius-breakpoints {
+  @each $name, $size in $border-radius-items {
     .rounded-#{$name} {
       border-radius: #{$size}px !important;
     }

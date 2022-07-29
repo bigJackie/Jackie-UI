@@ -18,6 +18,6 @@ export default {
   flex-basis: auto;
   overflow: auto;
   box-sizing: border-box;
-  padding: $main-padding;
+  // padding: $main-padding;
 }
 </style>

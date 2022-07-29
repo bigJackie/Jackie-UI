@@ -2,6 +2,9 @@
   <j-app id="app">
     <j-container app>
       <j-navigation-bar mini v-model="drawer">
+        <template v-slot:prepend>
+          <img style="width: 255px" src="https://www.jackiewongz.com/resources/blog_name_black.png" />
+        </template>
         <j-list nav>
           <j-list-group
             v-for="(group, group_id) in groups"
@@ -38,23 +41,40 @@ export default {
         {
           head: { name: "介绍", icon: "notes" },
           items: [
-            { name: "JUI简介", to: "/introduction/brief" },
-            { name: "版本路线", to: "/introduction/version-map" },
+            { name: "JUI简介", to: "/introduction/brief/" },
+            { name: "版本路线", to: "/introduction/version-map/" },
           ],
         },
         {
           head: { name: "快速入门", icon: "timer" },
           items: [
-            { name: "安装", to: "/getting-started/installation" },
-            { name: "快速上手", to: "/getting-started/quick-start" },
-            { name: "浏览器支持", to: "/getting-started/browser-support" },
+            { name: "安装", to: "/getting-started/installation/" },
+            { name: "快速上手", to: "/getting-started/quick-start/" },
+            { name: "浏览器支持", to: "/getting-started/browser-support/" },
           ],
         },
-        { head: { name: "特性", icon: "edit-markup" }, items: [{ name: "", to: "" }] },
-        { head: { name: "样式动画", icon: "color-bucket" }, items: [{}] },
+        {
+          head: { name: "特性", icon: "edit-markup" },
+          items: [
+            { name: "国际化", to: "/features/i18n/" },
+            { name: "主题", to: "/styles/theme/" },
+          ],
+        },
+        {
+          head: { name: "样式", icon: "color-bucket" },
+          items: [
+            { name: "海拔", to: "/styles/elevation/" },
+            { name: "颜色", to: "/styles/color/" },
+            { name: "文本", to: "/styles/text/" },
+            { name: "间距", to: "/styles/spacing/" },
+            { name: "弹性布局(Flex)", to: "/styles/flex/" },
+            { name: "边框(Border)", to: "/styles/border/" },
+            { name: "过渡动画", to: "/styles/transitions/" },
+          ],
+        },
         {
           head: { name: "组件", icon: "template" },
-          items: [{ name: "Lists(列表)", to: "/components/lists" }],
+          items: [{ name: "Lists(列表)", to: "/components/lists/" }],
         },
         { head: { name: "指令", icon: "code-slash" }, items: [{}] },
       ],

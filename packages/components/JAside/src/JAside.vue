@@ -1,7 +1,7 @@
 <template>
-  <div class="j-aside" :style="{ width: w }">
+  <nav class="j-aside" :style="{ width: w }">
     <slot></slot>
-  </div>
+  </nav>
 </template>
 
 <script>

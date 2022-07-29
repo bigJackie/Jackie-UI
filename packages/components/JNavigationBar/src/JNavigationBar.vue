@@ -1,7 +1,7 @@
 <template>
   <j-aside
     class="j-navigation-bar"
-    :class="{ 'is-hide': !drawer, 'is-mini': mini }"
+    :class="{ 'is-hide': !drawer, 'is-mini': mini, 'is-no-border': noBorder, 'is-right': right }"
     :style="{
       width: `${parseInt(width)}px`,
       height: height == '100%' ? '100%' : `${parseInt(height)}px`,
@@ -45,6 +45,10 @@ export default {
     fullSrc: { type: Boolean, default: false },
     // 迷你导航
     mini: { type: Boolean, default: false },
+    // 隐藏边框
+    noBorder: { type: Boolean, default: false },
+    // 右侧
+    right: { type: Boolean, default: false },
   },
   data() {
     return {};
@@ -56,10 +60,19 @@ export default {
 @include b(navigation-bar) {
   transition: all ease-in-out 0.5s;
   border-width: 0 thin 0 0;
-  border-right-color: rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
   border-style: solid;
   box-sizing: border-box;
   background-repeat: no-repeat;
+
+  @include when(right) {
+    border-width: 0 0 0 thin;
+    float: right;
+  }
+
+  @include when(no-border) {
+    border: none;
+  }
 
   @include when(hide) {
     width: 0px !important;
