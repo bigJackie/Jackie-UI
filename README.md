@@ -10,8 +10,14 @@ Jackie-UI is not only support perfectly on computers but also on cell phones.
 Jackie-UI now is undering development, please wait.
 
 ## TODO
+<details><summary>Features</summary>
+<p>
+
 - [ ] Internationalization
 - [ ] Theme
+
+</p>
+</details>
 <details><summary>Components</summary>
 - [ ] Application
 - [ ] App-Bar
