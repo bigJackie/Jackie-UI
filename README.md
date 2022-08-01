@@ -19,18 +19,26 @@ Jackie-UI now is undering development, please wait.
 </p>
 </details>
 <details><summary>Components</summary>
+<p>
+
 - [ ] Application
 - [ ] App-Bar
 - [ ] Lists
 - [ ] Navigation-Bar
+
+</p>
 </details>
 <details><summary>Documentation</summary>
+<p>
+
 - [ ] Introduction
 - [ ] Quick-Start
 - [ ] Features
 - [ ] Styles
 - [ ] Components
 - [ ] Directives
+
+</p>
 </details>
 
 ## install
