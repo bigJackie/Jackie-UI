@@ -44,9 +44,25 @@ module.exports = {
 
     config.resolve.alias.set("components", resolve("packages/components"));
     config.resolve.alias.set("style", resolve("packages/style"));
+    config.resolve.alias.set("docs", resolve("packages/docs"));
 
     // vue默认@指向src目录，这里要修正为examples，另外新增一个~指向packages
     // packages和examples目录需要加入编译
+    config.module
+      .rule("md")
+      .test(/\.md$/)
+      .use("vue-loader")
+      .loader("vue-loader")
+      .options({
+        compilerOptions: {
+          preserveWhitespace: false,
+        },
+      })
+      .end()
+      .use("md-loader")
+      .loader(path.resolve(__dirname, "./packages/utils/md-loader/index.js"))
+      .end();
+
     config.module
       .rule("js")
       .include.add(/packages/)

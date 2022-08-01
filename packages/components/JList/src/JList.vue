@@ -84,7 +84,7 @@ export default {
 
   @include b(list-item) {
     &::before {
-      border-radius: #{map-get($border-radius-items, "sm")}px !important;
+      border-radius: #{map-get($border-radius-items, "sm")} !important;
     }
   }
   /* dense */
@@ -124,7 +124,7 @@ export default {
   @include when(flat) {
     @include b(list-item) {
       &::before {
-        border-radius: #{map-get($border-radius-items, 0)}px !important;
+        border-radius: #{map-get($border-radius-items, 0)} !important;
       }
     }
   }
@@ -133,7 +133,7 @@ export default {
   @include when(rounded) {
     @include b(list-item) {
       &::before {
-        border-radius: #{map-get($border-radius-items, "pill")}px !important;
+        border-radius: #{map-get($border-radius-items, "pill")} !important;
       }
     }
   }

@@ -4,9 +4,12 @@
 @import "./borderradius.scss";
 @import "./font.scss";
 @import "./flexbox.scss";
+@import "./doc.scss";
 
 /* Theme */
 $font-color: rgba(0, 0, 0, 0.54);
+$border-color: rgba(0, 0, 0, 0.12);
+$border-width: thin;
 $color-primary: #1867c0;
 $color-hover: #000000de;
 
