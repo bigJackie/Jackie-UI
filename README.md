@@ -4,8 +4,10 @@
 
 Jackie-UI is not only support perfectly on computers but also on cell phones.
 
+
 > Jackie-UI borrows ideas from Element-UI and Vuetify. 
 > And for now, it just practice project for person.
+
 
 Jackie-UI now is undering development, please wait.
 
@@ -42,6 +44,9 @@ Jackie-UI now is undering development, please wait.
 </details>
 
 ## install
+``` javascript
+npm install jackiew-ui
+```
 
 ## Quick Start
 ``` javascript
@@ -68,3 +73,4 @@ For more information, please refer to Quick Start in our documentation.
 ## FAQ
 
 ## LICENSE
+[GPL-3.0](LICENSE)
