@@ -1,10 +1,12 @@
 # Jackie-UI
 
 > A UI Toolkit for Web-Apps Based On Vue.js 2.x.
+
 Jackie-UI is not only support perfectly on computers but also on cell phones.
 
 > Jackie-UI borrows ideas from Element-UI and Vuetify. 
 > And for now, it just practice project for person.
+
 Jackie-UI now is undering development, please wait.
 
 ## TODO
