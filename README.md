@@ -50,8 +50,8 @@ npm install jackiew-ui
 
 ## Quick Start
 ``` javascript
-import JUI from "jui-demo";
-import "jui-demo/jui.css";
+import JUI from "jackiew-ui";
+import "jackiew-ui/jui.css";
 Vue.use(JUI);
 
 // or
