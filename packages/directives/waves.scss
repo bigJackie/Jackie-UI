@@ -1,0 +1,25 @@
+/** src/directives/waves.css */
+@include b(application) {
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+      border-radius: 50%;
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+      border-radius: inherit;
+    }
+  }
+  .waves {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-primary;
+    opacity: 0;
+    border-radius: inherit;
+  }
+}

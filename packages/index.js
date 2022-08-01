@@ -24,7 +24,9 @@ Vue.prototype.$Eventbus = new Vue();
 import GGIcons from "vue2-css.gg";
 Vue.use(GGIcons);
 
-import "./utils/md-loader";
+import directives from "./directives";
+console.log(directives);
+Vue.use(directives.install);
 
 const components = [
   JApp,

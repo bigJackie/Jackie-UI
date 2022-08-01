@@ -1,5 +1,6 @@
 <template>
   <div
+    v-waves
     v-on="$listeners"
     class="j-list-item flex justify-start align-center"
     :class="{ 'is-link': link || to, 'is-no-icon': noIcon, 'is-active': active }"
@@ -101,6 +102,12 @@ export default {
     &::before {
       background-color: $color-primary;
       opacity: 0.12;
+    }
+    &:hover {
+      &::before {
+        background-color: $color-primary;
+        opacity: 0.15;
+      }
     }
   }
 
