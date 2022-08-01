@@ -21,10 +21,10 @@ Jackie-UI now is undering development, please wait.
 <details><summary>Components</summary>
 <p>
 
-- [ ] Application
-- [ ] App-Bar
-- [ ] Lists
-- [ ] Navigation-Bar
+- [x] Application
+- [x] App-Bar
+- [x] Lists
+- [x] Navigation-Bar
 
 </p>
 </details>
