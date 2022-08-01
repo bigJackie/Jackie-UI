@@ -59,7 +59,7 @@ import {
   JButton,
   JAppBar
   // ...
-} from 'jui-demo'
+} from 'jackiew-ui'
 Vue.component(JButton.name, JButton)
 Vue.component(JAppBar.name, JAppBar)
 ```
