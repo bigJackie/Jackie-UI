@@ -21,7 +21,9 @@ Jackie-UI now is undering development, please wait.
 <details><summary>Components</summary>
 <p>
 
-- [x] Application#739
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [x] Application#
 - [x] App-Bar
 - [x] Lists
 - [x] Navigation-Bar
