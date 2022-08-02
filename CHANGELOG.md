@@ -1,5 +1,11 @@
 # 0.1.0 (2022-08-02)
 
+### 🌟 新功能
+范围|描述|commitId
+--|--|--
+ Lists | Add contribute 'multiple' and route function for Lists | [edc0fe7](https://github.com/bigJackie/Jackie-UI/commit/edc0fe7)
+
+
 ### 🐛 Bug 修复
 范围|描述|commitId
 --|--|--

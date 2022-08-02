@@ -87,11 +87,12 @@ export default {
     };
   },
   mounted() {
-    let path = sessionStorage.getItem("path");
-    if (path && path != this.$route.path) this.$router.push({ path: path });
     window.addEventListener("beforeunload", e => this.beforeunloadHandler(e));
+    let path = sessionStorage.getItem("path");
+    // if(!path)
 
-    console.log(path);
+    if (path && path != this.$route.path) this.$router.push({ path: path });
+
     console.log(document.styleSheets.length);
   },
   methods: {
