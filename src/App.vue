@@ -12,7 +12,13 @@
             :prepend-icon="group.head.icon"
             :title="group.head.name"
           >
-            <j-list-item no-icon :to="item.to" v-for="(item, item_id) in group.items" :key="item_id">
+            <j-list-item
+              :is-active="item.active"
+              no-icon
+              :to="item.to"
+              v-for="(item, item_id) in group.items"
+              :key="item_id"
+            >
               <j-list-item-content>{{ item.name }}</j-list-item-content>
             </j-list-item>
           </j-list-group>
@@ -41,7 +47,7 @@ export default {
         {
           head: { name: "介绍", icon: "notes" },
           items: [
-            { name: "JUI简介", to: "/introduction/brief/" },
+            { name: "JUI简介", to: "/introduction/brief/", active: true },
             { name: "版本路线", to: "/introduction/version-map/" },
           ],
         },
@@ -81,7 +87,17 @@ export default {
     };
   },
   mounted() {
-    // console.log(document.styleSheets.length);
+    let path = sessionStorage.getItem("path");
+    if (path && path != this.$route.path) this.$router.push({ path: path });
+    window.addEventListener("beforeunload", e => this.beforeunloadHandler(e));
+
+    console.log(path);
+    console.log(document.styleSheets.length);
+  },
+  methods: {
+    beforeunloadHandler(e) {
+      sessionStorage.setItem("path", this.$route.path);
+    },
   },
 };
 </script>

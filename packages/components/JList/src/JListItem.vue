@@ -29,13 +29,42 @@ export default {
   data() {
     return {
       active: false,
+      independent: true,
     };
+  },
+  mounted() {
+    let path = sessionStorage.getItem("path");
+    if ((this.isActive && this.to == path) || this.to == path) {
+      if (this.independent) this.$Eventbus.$emit("list-item-to", false);
+      this.active = true;
+      this.$Eventbus.$emit("list-group-expand", this.$el);
+    }
+    this.$Eventbus.$on("list-item-to", val => {
+      val ? this.activate() : this.deActivate();
+    });
+    this.$Eventbus.$on("list-item-active", val => {
+      if (this.to == val) {
+        this.activate();
+        this.$Eventbus.$emit("list-group-expand", this.$el);
+      }
+    });
+  },
+  computed: {
+    getRoute() {
+      if (this.active) return this.$route;
+    },
+  },
+  watch: {
+    getRoute(val) {
+      if (val && this.to && val.path != this.to) this.$Eventbus.$emit("list-item-active", val.path);
+    },
   },
   methods: {
     activate() {
       if (this.to) {
-        this.$Eventbus.$emit("list-item-to", false);
+        if (this.independent) this.$Eventbus.$emit("list-item-to", false);
         this.active = true;
+        // sessionStorage.setItem("path", this.to);
         if (this.to && this.$route.path !== this.to) {
           this.$router.push({ path: this.to });
         }
@@ -44,12 +73,6 @@ export default {
     deActivate() {
       this.active = false;
     },
-  },
-  mounted() {
-    if (this.isActive) this.activate();
-    this.$Eventbus.$on("list-item-to", val => {
-      val ? this.activate() : this.deActivate();
-    });
   },
 };
 </script>

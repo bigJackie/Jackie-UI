@@ -22,7 +22,7 @@
       ></j-list-item-icon>
     </j-list-item>
     <div class="j-list-group__content" :class="{ 'is-expand': isExpanded, 'is-disabled': disabled }">
-      <slot></slot>
+      <slot :data="multiple"></slot>
     </div>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
     disabled: { type: Boolean, default: false },
     autoFold: { type: Boolean, default: false },
     singleGroup: { type: Boolean, default: false },
+    multiple: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -54,10 +55,12 @@ export default {
           parseInt(getComputedStyle(children[i].elm).marginBottom) +
           parseInt(getComputedStyle(children[i].elm).marginTop);
         this.content_height += children[i].elm.getBoundingClientRect().height + margin;
-        if (children[i].componentInstance)
+        if (children[i].componentInstance) {
+          if (this.multiple) children[i].componentInstance.independent = false;
           if (children[i].componentInstance.$data.content_height) {
             this.content_height += children[i].componentInstance.$data.content_height;
           }
+        }
       }
       if (this.singleGroup) {
         let children = this.$children;
@@ -66,6 +69,9 @@ export default {
           console.log(children[i].$data.single);
         }
       }
+    },
+    expand() {
+      this.isExpanded = true;
     },
     fold() {
       let children = this.$children;
@@ -95,6 +101,11 @@ export default {
   },
   mounted() {
     this.init();
+  },
+  created() {
+    this.$Eventbus.$on("list-group-expand", val => {
+      if (this.$el.contains(val)) this.expand();
+    });
   },
 };
 </script>

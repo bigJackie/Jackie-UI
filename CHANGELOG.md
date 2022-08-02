@@ -1,5 +1,11 @@
 # 0.1.0 (2022-08-02)
 
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ v-wave | Modify v-wave directive | [beed381](https://github.com/bigJackie/Jackie-UI/commit/beed381)
+
+
 ### 🔨 代码重构
 范围|描述|commitId
 --|--|--
