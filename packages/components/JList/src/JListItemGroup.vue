@@ -9,8 +9,3 @@ export default {
   name: "JListItemGroup",
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(list-item-group) {
-}
-</style>

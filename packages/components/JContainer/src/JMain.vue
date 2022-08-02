@@ -1,11 +1,12 @@
 <template>
-  <div class="j-list-item-title">
+  <main class="j-main">
     <slot></slot>
-  </div>
+  </main>
 </template>
 
 <script>
 export default {
-  name: "JListItemTitle",
+  name: "JMain",
+  props: {},
 };
 </script>

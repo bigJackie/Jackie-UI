@@ -1,0 +1,237 @@
+@include b(application) {
+  /* list-item */
+  @include b(list-item-content) {
+    box-sizing: border-box;
+  }
+
+  /* list-item */
+  @include b(list-item) {
+    /* DEFALUT */
+    height: 56px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 16px;
+    white-space: nowrap;
+
+    /* 禁用选择 */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    /* is-no-icon */
+    @include when(no-icon) {
+      @include b(list-item-content) {
+        margin-left: 48px;
+      }
+    }
+
+    /* 背景 */
+    &::before {
+      content: "";
+      width: 100%;
+      background-color: currentcolor;
+      position: absolute;
+      background-color: cfff;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    /* is-link */
+    @include when(link) {
+      cursor: pointer;
+      &:hover {
+        &::before {
+          background-color: $color-hover;
+          opacity: 0.04;
+        }
+      }
+    }
+
+    /* is-active */
+    @include when(active) {
+      color: $color-primary;
+      &::before {
+        background-color: $color-primary;
+        opacity: 0.12;
+      }
+      &:hover {
+        &::before {
+          background-color: $color-primary;
+          opacity: 0.15;
+        }
+      }
+    }
+
+    /* list-item-content */
+    @include b(list-item-content) {
+      flex: 1 1 100%;
+      text-align: start;
+    }
+
+    /* list-item-title */
+    @include b(list-item-title) {
+      font-size: 16px;
+      flex: 1 1 100%;
+      text-align: start;
+      font-weight: 500;
+    }
+
+    /* list-item-subtitle */
+    @include b(list-item-subtitle) {
+      font-size: 14px;
+      color: $font-color;
+      font-weight: 400;
+    }
+
+    /* list-item-icon */
+    @include b(list-item-icon) {
+      margin-right: 24px;
+    }
+  }
+
+  /* list-item-group */
+  @include b(list-item-group) {
+  }
+
+  /* list-group */
+  @include b(list-group) {
+    /* 禁用选择 */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    /* list-item__head */
+    @include b(list-item) {
+      @include e(head) {
+        cursor: pointer;
+        /* is-active */
+        @include when(expand) {
+          color: $color-primary;
+          &:hover {
+            &::before {
+              background-color: $color-primary;
+              opacity: 0.04;
+            }
+          }
+        }
+        /* is-hover */
+        &:hover {
+          &::before {
+            background-color: $color-hover;
+            opacity: 0.04;
+          }
+        }
+      }
+    }
+
+    /* list-group-icon__append */
+    @include b(list-group-icon) {
+      @include e(append) {
+        margin-right: 0px;
+        transform: rotateZ(0deg);
+        transition: all 0.2s ease-in-out;
+        /* is-expand */
+        @include when(expand) {
+          transform: rotateZ(180deg);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+
+    /* list-group__content */
+    @include e(content) {
+      overflow: hidden;
+      max-height: 0px;
+      transition: all 0.2s ease-in-out;
+      @include when(expand) {
+        max-height: var(--content-height);
+        transition: all 0.2s ease-in-out;
+      }
+      /* is-disabled */
+      @include when(disabled) {
+        @include b(list-item) {
+          cursor: default !important;
+          &:hover {
+            &::before {
+              opacity: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* list */
+  @include b(list) {
+    box-sizing: border-box;
+
+    /* list-item-background */
+    @include b(list-item) {
+      &::before {
+        border-radius: #{map-get($border-radius-items, "sm")} !important;
+      }
+    }
+
+    /* is-dense */
+    @include when(dense) {
+      @include b(list-item) {
+        height: 40px;
+      }
+    }
+    /* is-disabled */
+    @include when(disabled) {
+      @include b(list-item) {
+      }
+    }
+    /* is-flat */
+    @include when(flat) {
+      @include b(list-item) {
+      }
+    }
+
+    /* is-nav */
+    @include when(nav) {
+      padding: 4px 8px 0;
+      @include b(list-item) {
+        box-sizing: border-box;
+        height: 36px;
+        margin-bottom: 4px;
+        &:last-child {
+          margin: 0;
+        }
+        @include e(head) {
+          margin: 0;
+        }
+      }
+    }
+
+    /* is-flat */
+    @include when(flat) {
+      @include b(list-item) {
+        &::before {
+          border-radius: #{map-get($border-radius-items, 0)} !important;
+        }
+      }
+    }
+
+    /* is-rounded */
+    @include when(rounded) {
+      @include b(list-item) {
+        &::before {
+          border-radius: #{map-get($border-radius-items, "pill")} !important;
+        }
+      }
+    }
+
+    /* is-shaped */
+    @include when(shaped) {
+      @include b(list-item) {
+      }
+    }
+  }
+}

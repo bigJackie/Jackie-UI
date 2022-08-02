@@ -24,16 +24,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@include b(doc-title) {
-  /* DEAFULT */
-  cursor: pointer;
-
-  /* POUND */
-  @include e(pound) {
-    color: $color-primary;
-    margin-right: 4px;
-  }
-}
-</style>

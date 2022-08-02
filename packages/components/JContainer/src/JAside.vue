@@ -23,11 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(aside) {
-  overflow: auto;
-  box-sizing: border-box;
-  flex-shrink: 0;
-}
-</style>

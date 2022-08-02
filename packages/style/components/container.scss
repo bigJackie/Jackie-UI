@@ -1,0 +1,61 @@
+@include b(application) {
+  /* aside */
+  @include b(aside) {
+    overflow: auto;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  /* footer */
+  @include b(footer) {
+    padding: $footer-padding;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  /* header */
+  @include b(header) {
+    padding: $header-padding;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  /* main */
+  @include b(main) {
+    display: block;
+    flex: 1;
+    flex-basis: auto;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+
+  /* container */
+  @include b(container) {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-basis: auto;
+    box-sizing: border-box;
+    min-width: 0;
+
+    /* is-verticle */
+    @include when(vertical) {
+      flex-direction: column;
+    }
+
+    /* is-app */
+    @include when(app) {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    /* is-absolute */
+    @include when(absolute) {
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 // src/directives/waves.js
-import "./waves.scss";
 import Vue from "vue";
 export default {
   bind(el, binding) {
@@ -7,7 +6,6 @@ export default {
     dom.setAttribute("class", "waves");
     dom.innerHTML = "<div></div>";
     dom.attrs = {};
-    console.log(dom.style);
 
     dom.addEventListener("click", e => {
       e.target.style.animation = "wave ease-out .25s";

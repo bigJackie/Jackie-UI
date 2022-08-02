@@ -1,0 +1,49 @@
+@include b(application) {
+  @include b(navigation-bar) {
+    /* DEFALUT */
+    transition: all ease-in-out 0.5s;
+    border-width: 0 thin 0 0;
+    border-color: rgba(0, 0, 0, 0.12) !important;
+    border-style: solid;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+
+    /* is-right */
+    @include when(right) {
+      border-width: 0 0 0 thin;
+      float: right;
+    }
+
+    /* is-no-border */
+    @include when(no-border) {
+      border: none;
+    }
+
+    /* is-hide */
+    @include when(hide) {
+      width: 0px !important;
+      border-width: 0;
+      transition: all ease-in-out 0.5s;
+    }
+
+    /* is-mini */
+    @include when(mini) {
+    }
+
+    /* mobile-display */
+    @media only screen and (max-width: getBreakPoint(sm)) {
+      position: absolute;
+      z-index: 999;
+    }
+
+    /* prepend */
+    @include e(prepend) {
+      width: 100%;
+    }
+
+    /* append */
+    @include e(append) {
+      width: 100%;
+    }
+  }
+}

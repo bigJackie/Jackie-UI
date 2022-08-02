@@ -1,0 +1,7 @@
+@include b(application) {
+  @include b(icon) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

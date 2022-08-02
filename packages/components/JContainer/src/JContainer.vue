@@ -37,31 +37,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(container) {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  flex-basis: auto;
-  box-sizing: border-box;
-  min-width: 0;
-
-  @include when(vertical) {
-    flex-direction: column;
-  }
-
-  @include when(app) {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    left: 0;
-    top: 0;
-  }
-
-  @include when(absolute) {
-    position: absolute;
-    width: 100%;
-  }
-}
-</style>

@@ -24,7 +24,6 @@ for (let dir_index in docs_dir) {
       component: () => import(`docs/${dir_index}/${docs[i]}`),
     };
     doc_path[dir_index].push(doc);
-    console.log(doc);
   }
 }
 

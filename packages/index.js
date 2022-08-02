@@ -1,9 +1,5 @@
 import JApp from "components/JApp";
 import JContainer from "components/JContainer";
-import JHeader from "components/JHeader";
-import JMain from "components/JMain";
-import JFooter from "components/JFooter";
-import JAside from "components/JAside";
 
 import JAppBar from "components/JAppBar";
 import JNavigationBar from "components/JNavigationBar";
@@ -25,24 +21,9 @@ import GGIcons from "vue2-css.gg";
 Vue.use(GGIcons);
 
 import directives from "./directives";
-console.log(directives);
 Vue.use(directives.install);
 
-const components = [
-  JApp,
-  JContainer,
-  JHeader,
-  JMain,
-  JFooter,
-  JAside,
-  JAppBar,
-  JNavigationBar,
-  JIcon,
-  JButton,
-  JScorll,
-  JList,
-  JDoc,
-];
+const components = [JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JList, JDoc];
 
 const install = function (Vue) {
   if (install.installed) return;
@@ -59,10 +40,6 @@ export default {
   install,
   JApp,
   JContainer,
-  JHeader,
-  JMain,
-  JFooter,
-  JAside,
   JAppBar,
   JNavigationBar,
   JIcon,
@@ -72,18 +49,4 @@ export default {
   JDoc,
 };
 
-export {
-  JApp,
-  JContainer,
-  JHeader,
-  JMain,
-  JFooter,
-  JAside,
-  JAppBar,
-  JNavigationBar,
-  JIcon,
-  JButton,
-  JScorll,
-  JList,
-  JDoc,
-};
+export { JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JList, JDoc };

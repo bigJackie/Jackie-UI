@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import JHeader from "../../JHeader/src/JHeader.vue";
+import JHeader from "../../JContainer/src/JHeader.vue";
 export default {
   components: { JHeader },
   name: "JAppBar",
@@ -101,19 +101,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(app-bar) {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 4px 16px;
-  width: 100%;
-  box-sizing: border-box;
-  height: 48px;
-  border-radius: $app-bar-border-radius;
-  border-width: 0 0 thin;
-  border-bottom-color: rgba(0, 0, 0, 0.12) !important;
-  border-style: solid;
-}
-</style>

@@ -83,11 +83,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(icon) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>

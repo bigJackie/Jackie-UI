@@ -1,0 +1,54 @@
+@include b(application) {
+  @include b(doc) {
+    padding: 20px;
+  }
+
+  /* doc-container */
+  @include b(doc-container) {
+    box-sizing: border-box;
+    border: $border-width solid $border-color;
+    border-radius: #{map-get($border-radius-items, "md")} !important;
+
+    /* component */
+    @include b(component) {
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    /* code-block */
+    @include b(code-block) {
+      border-width: $border-width 0 0 0;
+      border-style: solid;
+      border-color: $border-color;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+      height: var(--highlight--height);
+
+      @include when("fold") {
+        height: 0px;
+        transition: all 0.2s ease-in-out;
+        border-width: 0;
+      }
+    }
+
+    /* doc-container-action */
+    @include b(doc-container-action) {
+      border-width: $border-width 0 0 0;
+      border-style: solid;
+      border-color: $border-color;
+      height: 40px;
+    }
+  }
+
+  /* doc-title */
+  @include b(doc-title) {
+    /* DEAFULT */
+    cursor: pointer;
+
+    /* POUND */
+    @include e(pound) {
+      color: $color-primary;
+      margin-right: 4px;
+    }
+  }
+}

@@ -9,5 +9,3 @@ export default {
   name: "JListItemSubtitle",
 };
 </script>
-
-<style lang="scss" scoped></style>

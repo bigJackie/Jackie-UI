@@ -187,38 +187,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@include b(scroll) {
-  position: relative;
-  overflow: scroll;
-
-  @include when(show) {
-    // IE, Edge
-    -ms-overflow-style: none;
-    // 火狐
-    scrollbar-width: none;
-  }
-
-  // 滚动条滑块
-  @include b(scroll-bar) {
-    position: absolute;
-    border-radius: 10rem;
-    z-index: 999;
-    right: 0;
-    cursor: pointer;
-    opacity: 1;
-  }
-  // 滚动条显示控制
-  @include b(scroll-bar-hide) {
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-    visibility: hidden;
-  }
-}
-
-// 隐藏原生滚动条
-::-webkit-scrollbar {
-  display: none;
-}
-</style>

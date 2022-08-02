@@ -9,9 +9,3 @@ export default {
   name: "JAppBarNavIcon",
 };
 </script>
-
-<style lang="scss" scoped>
-@include b(app-bar-nav-icon) {
-  margin-right: 12px;
-}
-</style>
