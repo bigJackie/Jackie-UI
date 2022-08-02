@@ -1,6 +1,6 @@
 <template>
   <div
-    v-waves
+    v-waves="link || to"
     v-on="$listeners"
     class="j-list-item flex justify-start align-center"
     :class="{ 'is-link': link || to, 'is-no-icon': noIcon, 'is-active': active }"
@@ -24,6 +24,7 @@ export default {
     // 跳转路由
     to: { type: String | Object, default: undefined },
     noIcon: { type: Boolean, default: false },
+    isActive: { type: Boolean, deafault: false },
   },
   data() {
     return {
@@ -33,7 +34,7 @@ export default {
   methods: {
     activate() {
       if (this.to) {
-        this.$Eventbus.$emit("list-item-to");
+        this.$Eventbus.$emit("list-item-to", false);
         this.active = true;
         if (this.to && this.$route.path !== this.to) {
           this.$router.push({ path: this.to });
@@ -45,8 +46,9 @@ export default {
     },
   },
   mounted() {
-    this.$Eventbus.$on("list-item-to", () => {
-      this.deActivate();
+    if (this.isActive) this.activate();
+    this.$Eventbus.$on("list-item-to", val => {
+      val ? this.activate() : this.deActivate();
     });
   },
 };

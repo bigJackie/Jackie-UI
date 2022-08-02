@@ -4,6 +4,7 @@
       <slot name="head"></slot>
     </div>
     <j-list-item
+      link
       class="j-list-item__head"
       :class="{ 'is-expand': isExpanded }"
       v-else
