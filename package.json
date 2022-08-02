@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name jui --dest ../jui-demo packages/index.js"
+    "cz": "npm run log && git add . && git cz",
+    "lib": "vue-cli-service build --target lib --name jui --dest ../jui-demo packages/index.js",
+    "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -14,6 +16,7 @@
     "markdown-it-chain": "^1.3.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
+    "right-pad": "^1.0.1",
     "transliteration": "^2.3.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -27,12 +30,27 @@
     "@vue/cli-plugin-router": "~4.5.15",
     "@vue/cli-plugin-vuex": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
+    "commitizen": "^4.0.3",
+    "commitlint": "^8.2.0",
+    "conventional-changelog-cli": "^2.0.28",
+    "husky": "^3.0.9",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-commitlint": "~1.0.12"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
