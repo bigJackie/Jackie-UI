@@ -63,7 +63,7 @@ export default {
           head: { name: "特性", icon: "edit-markup" },
           items: [
             { name: "国际化", to: "/features/i18n/" },
-            { name: "主题", to: "/styles/theme/" },
+            { name: "主题", to: "/features/theme/" },
           ],
         },
         {

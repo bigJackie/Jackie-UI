@@ -1,4 +1,4 @@
-# 0.1.0 (2022-08-02)
+# 0.1.0 (2022-08-07)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -9,6 +9,7 @@
 ### 🐛 Bug 修复
 范围|描述|commitId
 --|--|--
+ Lists | reslove bugs on list-item's router redirect | [fb6d969](https://github.com/bigJackie/Jackie-UI/commit/fb6d969)
  v-wave | Modify v-wave directive | [beed381](https://github.com/bigJackie/Jackie-UI/commit/beed381)
 
 

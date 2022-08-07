@@ -34,8 +34,6 @@ export default {
   },
   mounted() {
     let path = sessionStorage.getItem("path");
-    // console.log(this.isActive && this.to == path);
-    console.log(this.to, path, this.to == path);
     // 硬编码 有待改进
     if (
       (this.isActive && this.to == path) ||

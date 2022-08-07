@@ -1,0 +1,25 @@
+@import "./material_color.scss";
+
+@each $m_colors, $m_color_map in $material_colors {
+  @each $m_color, $color in $m_color_map {
+    @if ($m_color == "") {
+      .#{$m_colors} {
+        background-color: #{$color} !important;
+        border-color: #{$color} !important;
+      }
+
+      .text-#{$m_colors} {
+        color: #{$color} !important;
+      }
+    } @else {
+      .#{$m_colors}-#{$m_color} {
+        background-color: #{$color} !important;
+        border-color: #{$color} !important;
+      }
+
+      .text-#{$m_colors}-#{$m_color} {
+        color: #{$color} !important;
+      }
+    }
+  }
+}
