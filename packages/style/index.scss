@@ -6,11 +6,13 @@
 @import "./mixins/mixin.scss";
 
 /* Styles */
-@import "./styles/elevation.scss";
-@import "./styles/breakpoints.scss";
 @import "./styles/borderradius.scss";
-@import "./styles/font.scss";
+@import "./styles/breakpoints.scss";
+@import "./styles/color.scss";
+@import "./styles/elevation.scss";
 @import "./styles/flexbox.scss";
+@import "./styles/font.scss";
+@import "./styles/spacing.scss";
 
 /* Components */
 @import "./components/index.scss";

@@ -1,0 +1,56 @@
+$spacing-base: 4;
+
+$spacing-size-breakpoints: (
+  undefined: "",
+  xs: "xs-",
+  sm: "sm-",
+  md: "md-",
+  lg: "lg-",
+  xl: "xl-",
+);
+
+$spcing-direction: (
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right",
+  "x": (
+    "left",
+    "right",
+  ),
+  "y": (
+    "top",
+    "bottom",
+  ),
+  "a": (
+    "left",
+    "right",
+    "top",
+    "bottom",
+  ),
+);
+
+@include b(application) {
+  @each $size_name, $size_item in $spacing-size-breakpoints {
+    @media only screen and (max-width: getBreakPoint($size_name)) and (min-width: getBreakPointSmall($size_name)) {
+      @each $spacing_name, $spacing_vals in $spcing-direction {
+        @each $spacing_val in $spacing_vals {
+          @for $i from 0 through 16 {
+            .m#{$spacing_name}-#{$size_item}#{$i} {
+              margin-#{$spacing_val}: #{$i * $spacing-base}px !important;
+            }
+            .m#{$spacing_name}-#{$size_item}n#{$i} {
+              margin-#{$spacing_val}: #{- ($i * $spacing-base)}px !important;
+            }
+            .p#{$spacing_name}-#{$size_item}#{$i} {
+              padding-#{$spacing_val}: #{$i * $spacing-base}px !important;
+            }
+          }
+          .m#{$spacing_name}-#{$size_item}auto {
+            margin-#{$spacing_val}: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
