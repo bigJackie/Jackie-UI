@@ -1,3 +1,3 @@
 export default {
-  styles: ["border.md", "flex.md"],
+  styles: ["border.md", "color.md", "flex.md"],
 };

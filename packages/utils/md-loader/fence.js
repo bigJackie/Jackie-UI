@@ -6,8 +6,13 @@ module.exports = md => {
     // 判断该 fence 是否在 :::demo 内
     const prevToken = tokens[idx - 1];
     const isInDemoContainer = prevToken && prevToken.nesting === 1 && prevToken.info.trim().match(/^demo\s*(.*)$/);
-    if (token.info === 'html' && isInDemoContainer) {
-      return `<template slot="highlight"><pre v-pre><code class="html">${md.utils.escapeHtml(token.content)}</code></pre></template>`;
+    const isInBlockContainer = prevToken && prevToken.nesting === 1 && prevToken.info.trim().match(/^block\s*(.*)$/);
+    if (token.info === "html" && isInDemoContainer) {
+      return `<template slot="highlight"><pre v-pre><code class="html">${md.utils.escapeHtml(
+        token.content
+      )}</code></pre></template>`;
+    } else if (token.info === "html" && isInBlockContainer) {
+      return;
     }
     return defaultRender(tokens, idx, options, env, self);
   };

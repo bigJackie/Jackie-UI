@@ -1,17 +1,22 @@
 <template>
-  <div class="j-doc-container" @mouseenter="is_hover = true" @mouseleave="is_hover = false">
-    <div class="j-component">
+  <div
+    :style="{ border: $slots.highlight ? '' : 'none' }"
+    class="j-doc-container"
+    @mouseenter="is_hover = true"
+    @mouseleave="is_hover = false"
+  >
+    <div class="j-component" :class="{ 'pa-0': !$slots.highlight }">
       <slot name="component"></slot>
     </div>
     <div class="j-code-block" :class="{ 'is-fold': !is_expanded }" :style="{ '--highlight--height': highlight_height }">
       <!-- <div class="description" v-if="$slots.default">
         <slot></slot>
       </div> -->
-      <div class="highlight">
+      <div class="highlight" v-if="$slots.highlight">
         <slot name="highlight"></slot>
       </div>
     </div>
-    <div class="j-doc-container-action flex flex-row justify-end">
+    <div v-if="$slots.highlight" class="j-doc-container-action flex flex-row justify-end">
       <j-icon class="mr-2" name="code" @click="is_expanded = !is_expanded"></j-icon>
     </div>
   </div>
@@ -48,8 +53,10 @@ export default {
     }
   },
   mounted() {
-    let highlight = this.$slots.highlight[0];
-    this.highlight_height = getComputedStyle(highlight.elm).height;
+    if (this.$slots.highlight) {
+      let highlight = this.$slots.highlight[0];
+      this.highlight_height = getComputedStyle(highlight.elm).height;
+    }
   },
 };
 </script>
