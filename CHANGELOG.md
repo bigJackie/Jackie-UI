@@ -3,6 +3,7 @@
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ doc | add block container | [60d9088](https://github.com/bigJackie/Jackie-UI/commit/60d9088)
  Lists | Add contribute 'multiple' and route function for Lists | [edc0fe7](https://github.com/bigJackie/Jackie-UI/commit/edc0fe7)
  styles | add spacing class | [7b77a8c](https://github.com/bigJackie/Jackie-UI/commit/7b77a8c)
 
