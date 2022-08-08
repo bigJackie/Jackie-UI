@@ -1,4 +1,4 @@
-# 0.1.0 (2022-08-07)
+# 0.1.0 (2022-08-08)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -16,6 +16,12 @@
  color style | make color more powerful | [7fa6b8a](https://github.com/bigJackie/Jackie-UI/commit/7fa6b8a)
  Lists | reslove bugs on list-item's router redirect | [fb6d969](https://github.com/bigJackie/Jackie-UI/commit/fb6d969)
  v-wave | Modify v-wave directive | [beed381](https://github.com/bigJackie/Jackie-UI/commit/beed381)
+
+
+### 📝 文档
+范围|描述|commitId
+--|--|--
+ docs | add styles/color docs | [34055b3](https://github.com/bigJackie/Jackie-UI/commit/34055b3)
 
 
 ### 🔨 代码重构
