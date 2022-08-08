@@ -13,6 +13,7 @@
 范围|描述|commitId
 --|--|--
  add black and white class | add black and white class | [78a097b](https://github.com/bigJackie/Jackie-UI/commit/78a097b)
+ appbar | fixed appbar height display | [4c5cfc9](https://github.com/bigJackie/Jackie-UI/commit/4c5cfc9)
  color style | make color more powerful | [7fa6b8a](https://github.com/bigJackie/Jackie-UI/commit/7fa6b8a)
  Lists | reslove bugs on list-item's router redirect | [fb6d969](https://github.com/bigJackie/Jackie-UI/commit/fb6d969)
  v-wave | Modify v-wave directive | [beed381](https://github.com/bigJackie/Jackie-UI/commit/beed381)

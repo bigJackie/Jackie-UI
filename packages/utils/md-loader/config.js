@@ -11,12 +11,12 @@ config.options
   .end()
 
   .plugin("anchor")
-  .use(anchorPlugin, [
+  .use(require("markdown-it-anchor"), [
     {
       level: 2,
-      slugify: slugify,
       permalink: true,
       permalinkBefore: true,
+      permalinkSymbol: "#",
     },
   ])
   .end()
@@ -24,6 +24,8 @@ config.options
   .plugin("containers")
   .use(containers)
   .end();
+
+// console.log(config.plugins.get("anchor").get("args"));
 
 const md = config.toMd();
 overWriteFenceRule(md);
