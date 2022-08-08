@@ -55,7 +55,9 @@ export default {
   mounted() {
     if (this.$slots.highlight) {
       let highlight = this.$slots.highlight[0];
-      this.highlight_height = getComputedStyle(highlight.elm).height;
+      this.highlight_height = `${
+        parseFloat(getComputedStyle(highlight.elm).height) + parseFloat(getComputedStyle(highlight.elm).padding) * 2
+      }px`;
     }
   },
 };

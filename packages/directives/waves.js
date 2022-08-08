@@ -1,5 +1,4 @@
 // src/directives/waves.js
-import Vue from "vue";
 export default {
   bind(el, binding) {
     if (binding.value) {
