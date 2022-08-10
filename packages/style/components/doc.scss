@@ -1,10 +1,60 @@
 @include b(application) {
+  /* doc */
   @include b(doc) {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 100%;
+    font-family: Roboto, sans-serif !important;
+
+    a {
+      text-decoration: none;
+    }
+
+    pre {
+      margin: 0;
+      padding: 10px;
+      box-sizing: content-box;
+    }
+
+    code {
+      background-color: #0000000d;
+      padding: 0.2rem 0.4rem;
+    }
+
+    /* header */
+    h1 {
+      margin: 0.5rem 0;
+      font-family: Roboto, sans-serif !important;
+      font-size: 3rem !important;
+      font-weight: 400 !important;
+      letter-spacing: normal !important;
+    }
+    h2 {
+      margin: 0.5rem 0;
+      font-size: 2.125rem !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.0073529412em !important;
+    }
+    h3 {
+      margin: 0.25rem 0;
+      font-size: 1.5rem !important;
+      font-weight: 400 !important;
+      letter-spacing: normal !important;
+    }
+
+    h4 {
+      margin: 0.25rem 0;
+      font-size: 1.25rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.0125em !important;
+    }
   }
 
   /* doc-container */
   @include b(doc-container) {
+    width: 100%;
     box-sizing: border-box;
     border: $border-width solid $border-color;
     border-radius: #{map-get($border-radius-items, "md")} !important;
@@ -12,7 +62,7 @@
     /* component */
     @include b(component) {
       box-sizing: border-box;
-      padding: 10px;
+      padding: 20px;
     }
 
     /* code-block */
@@ -23,11 +73,18 @@
       overflow: hidden;
       transition: all 0.2s ease-in-out;
       height: var(--highlight--height);
+      background-color: #fafafa;
 
       @include when("fold") {
         height: 0px;
         transition: all 0.2s ease-in-out;
         border-width: 0;
+      }
+
+      .html {
+        font-size: 16px;
+        line-height: 1.2;
+        background-color: transparent;
       }
     }
 
