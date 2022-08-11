@@ -1,4 +1,48 @@
 @include b(application) {
+  $row-gap: var(--row-gap);
+
+  /* row */
   @include b(row) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% + $row-gap);
+    box-sizing: border-box;
+  }
+
+  /* col */
+  @include b(col) {
+    overflow: hidden;
+  }
+
+  /* cols=0 */
+  .col-0 {
+    display: none;
+  }
+
+  @for $i from 0 through 24 {
+    @each $size_name, $size_item in $flex-size-breakpoints {
+      @media only screen and (max-width: getBreakPoint($size_name)) and (min-width: getBreakPointSmall($size_name)) {
+        @if ($size_item == "") {
+          /* cols */
+          .col-#{$size_item}#{$i} {
+            width: calc((1 / 24 * $i * 100) * 1% - $row-gap);
+          }
+          /* offset */
+          .col-offset-#{$size_item}#{$i} {
+            margin-left: calc((1 / 24 * $i * 100) * 1%);
+          }
+        } @else {
+          /* cols */
+          .col-#{$size_item}#{$i} {
+            width: calc((1 / 24 * $i * 100) * 1% - $row-gap) !important;
+          }
+          /* offset */
+          .col-offset-#{$size_item}#{$i} {
+            margin-left: calc((1 / 24 * $i * 100) * 1%) !important;
+          }
+        }
+      }
+    }
   }
 }

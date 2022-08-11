@@ -1,8 +1,9 @@
-# 0.1.0 (2022-08-10)
+# 0.1.0 (2022-08-11)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ components | added layout component | [85e674c](https://github.com/bigJackie/Jackie-UI/commit/85e674c)
  doc | add block container | [60d9088](https://github.com/bigJackie/Jackie-UI/commit/60d9088)
  flexbox | add flex wrap | [830cec5](https://github.com/bigJackie/Jackie-UI/commit/830cec5)
  highlight | added highlight.js to markdown | [609fc37](https://github.com/bigJackie/Jackie-UI/commit/609fc37)
