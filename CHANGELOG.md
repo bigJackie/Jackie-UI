@@ -1,8 +1,9 @@
-# 0.1.0 (2022-08-11)
+# 0.1.0 (2022-08-26)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ components | added a component named layout contains j-row and j-col | [dd4e4ea](https://github.com/bigJackie/Jackie-UI/commit/dd4e4ea)
  components | added layout component | [85e674c](https://github.com/bigJackie/Jackie-UI/commit/85e674c)
  doc | add block container | [60d9088](https://github.com/bigJackie/Jackie-UI/commit/60d9088)
  flexbox | add flex wrap | [830cec5](https://github.com/bigJackie/Jackie-UI/commit/830cec5)
