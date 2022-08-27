@@ -24,7 +24,20 @@ config.options
   .end()
 
   .plugin("toc")
-  .use(tocPlugin)
+  .use(tocPlugin, [
+    {
+      level: 2,
+      slugify: slugify,
+      containerClass: "j-toc",
+      listClass: "j-toc-list",
+      itemClass: "j-toc-item",
+      linkClass: "j-toc-link",
+      listType: "ul",
+      format: (x, htmlencode) => {
+        return `<j-doc-toc-link hash="${slugify(htmlencode(x))}">${htmlencode(x)}</j-doc-toc-link>`;
+      },
+    },
+  ])
   .end()
 
   .plugin("containers")

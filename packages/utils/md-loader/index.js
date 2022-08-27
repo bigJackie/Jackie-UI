@@ -53,10 +53,23 @@ module.exports = function (source) {
   }
 
   output.push(content.slice(start));
+
+  // 硬编码，有待改善
+  let toc = output.join("").substring(output.join("").indexOf("<nav"), output.join("").indexOf("</nav>") + 6);
+  let text = output.join("").indexOf("<nav") != -1 ? output.join("").split(toc)[1] : output.join("");
   return `
     <template>
-      <section class="j-doc">
-        ${output.join("")}
+      <section>
+        <j-doc>
+          <j-row gap="20">
+            <j-col cols="19">
+              ${text}
+            </j-col>
+            <j-col cols="5">
+              ${toc}
+            </j-col>
+          </j-row>
+        </j-doc>
       </section>
     </template>
     ${pageScript}

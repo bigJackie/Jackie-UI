@@ -1,0 +1,52 @@
+@include b(application) {
+  /* toc */
+  @include b(toc) {
+    position: fixed;
+    padding: 0 10px;
+    height: 100%;
+    border-left: thin solid $border-color;
+    &::before {
+      position: relative;
+      content: "目录";
+      font-size: 20px;
+    }
+    /* toc-list */
+    @include b(toc-list) {
+      padding-left: 30px;
+    }
+    /* toc-item */
+    @include b(toc-item) {
+      &::marker {
+        content: "";
+      }
+    }
+    /* toc-link */
+    @include b(toc-link) {
+      display: inline-block;
+      text-justify: center;
+      color: $font-color;
+      font-size: 14px;
+    }
+
+    /* doc-toc-link */
+    @include b(doc-toc-link) {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 2px;
+        background-color: $border-color;
+        margin-right: 10px;
+      }
+      @include when(selected) {
+        color: $color-primary;
+        &::before {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+[[toc]]
 # 颜色
 通过**scss**，你可以使用[ Material Design 规范](https://material.io/design/color/the-color-system.html)中所有的颜色。这些颜色你都可以在任何vue文件中通过**class 颜色预置类**使用
 
@@ -7,7 +8,7 @@
 :::demo
 ```html
 <template>
-  <div class="purple darken-2 text-center">
+  <div class="teal text-center">
     <span class="text-white">Lorem ipsum</span>
   </div>
 </template>
@@ -19,27 +20,31 @@
 :::block
 ```html
 <j-container class="flex flex-wrap">
-	<div v-for="(color, colors_id) in colors" :key="colors_id">
-		<j-list width="200">
-		<j-list-item :class="[`${color.name}`, `text-white`]">{{color.name.toUpperCase()}}</j-list-item>
-		<div v-for="(item, color_id) in color.val" :key="color_id">
-		<j-list-item  :class="[`${color.name}-${item.name}`]" class="flex justify-space-between">
-			<span :class="{'text-white': item.name > 500}">{{item.name}}</span>
-			<span :class="{'text-white': item.name > 500}">{{item.val.toUpperCase()}}</span>
-		</j-list-item>
-		</div>
-		</j-list>
-	</div>
-	<j-list width="200">
-			<j-list-item class="black flex justify-space-between">
-				<span class="text-white">black</span>
-				<span class="text-white">#000000</span>
+	<j-row gap="20">
+		<j-col cols="6" v-for="(color, colors_id) in colors" :key="colors_id">
+			<j-list class="my-3">
+			<j-list-item :class="[`${color.name}`, `text-white`]">{{color.name.toUpperCase()}}</j-list-item>
+			<div v-for="(item, color_id) in color.val" :key="color_id">
+			<j-list-item  :class="[`${color.name}-${item.name}`]" class="flex justify-space-between">
+				<span :class="{'text-white': item.name > 500}">{{item.name}}</span>
+				<span :class="{'text-white': item.name > 500}">{{item.val.toUpperCase()}}</span>
 			</j-list-item>
-			<j-list-item class="white flex justify-space-between">
-				<span>white</span>
-				<span>#FFFFFF</span>
-			</j-list-item>
-		</j-list>
+			</div>
+			</j-list>
+		</j-col>
+		<j-col cols="6">
+			<j-list class="my-3">
+				<j-list-item class="black flex justify-space-between">
+					<span class="text-white">black</span>
+					<span class="text-white">#000000</span>
+				</j-list-item>
+				<j-list-item class="white flex justify-space-between">
+					<span>white</span>
+					<span>#FFFFFF</span>
+				</j-list-item>
+			</j-list>
+		</j-col>
+	</j-row>
 </j-container>
 
 <script>
@@ -47,7 +52,7 @@ export default {
  data() {
 	return {
 		colors:[
-			{
+			{	
 				name:"red",
 				val: [
 					{name: 50, val: "#ffebee"},

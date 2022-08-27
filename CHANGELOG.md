@@ -1,4 +1,4 @@
-# 0.1.0 (2022-08-26)
+# 0.1.0 (2022-08-27)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -40,6 +40,7 @@
 范围|描述|commitId
 --|--|--
  - | Add Commit Spec. | [62cb717](https://github.com/bigJackie/Jackie-UI/commit/62cb717)
+ npm | add tocplugin | [b5e12c6](https://github.com/bigJackie/Jackie-UI/commit/b5e12c6)
 
 
 范围|描述|commitId
