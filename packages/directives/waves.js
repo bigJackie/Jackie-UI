@@ -1,7 +1,7 @@
 // src/directives/waves.js
 export default {
   bind(el, binding) {
-    if (binding.value) {
+    if (binding.value || binding.value == undefined) {
       let dom = document.createElement("div");
       dom.setAttribute("class", "waves");
       dom.innerHTML = "<div></div>";

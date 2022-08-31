@@ -39,6 +39,12 @@ const routes = [
     component: () => import("../views/Index.vue"),
     children: doc_path["styles"],
   },
+  {
+    path: "/components",
+    name: "Components",
+    component: () => import("../views/Index.vue"),
+    children: doc_path["components"],
+  },
 ];
 
 const router = new VueRouter({

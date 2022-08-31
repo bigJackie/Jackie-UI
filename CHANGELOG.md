@@ -1,8 +1,9 @@
-# 0.1.0 (2022-08-27)
+# 0.1.0 (2022-08-31)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ - | added doc toc menu | [0cc050a](https://github.com/bigJackie/Jackie-UI/commit/0cc050a)
  components | added a component named layout contains j-row and j-col | [dd4e4ea](https://github.com/bigJackie/Jackie-UI/commit/dd4e4ea)
  components | added layout component | [85e674c](https://github.com/bigJackie/Jackie-UI/commit/85e674c)
  doc | add block container | [60d9088](https://github.com/bigJackie/Jackie-UI/commit/60d9088)

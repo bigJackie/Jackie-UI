@@ -15,17 +15,15 @@
     overflow: hidden;
   }
 
-  /* cols=0 */
-  .col-0 {
-    display: none;
-  }
-
   @for $i from 0 through 24 {
     @each $size_name, $size_item in $flex-size-breakpoints {
       @media only screen and (max-width: getBreakPoint($size_name)) and (min-width: getBreakPointSmall($size_name)) {
         @if ($size_item == "") {
           /* cols */
           .col-#{$size_item}#{$i} {
+            @if ($i == 0) {
+              display: none;
+            }
             width: calc((1 / 24 * $i * 100) * 1% - $row-gap);
           }
           /* offset */
@@ -35,6 +33,9 @@
         } @else {
           /* cols */
           .col-#{$size_item}#{$i} {
+            @if ($i == 0) {
+              display: none;
+            }
             width: calc((1 / 24 * $i * 100) * 1% - $row-gap) !important;
           }
           /* offset */

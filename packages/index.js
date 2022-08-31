@@ -6,6 +6,7 @@ import JNavigationBar from "components/JNavigationBar";
 import JIcon from "components/JIcon";
 import JButton from "components/JButton";
 import JScorll from "components/JButton";
+import JPaper from "components/JPaper";
 
 import JList from "components/JList";
 import JLayout from "components/JLayout";
@@ -24,7 +25,7 @@ Vue.use(GGIcons);
 import directives from "./directives";
 Vue.use(directives.install);
 
-const components = [JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JList, JLayout, JDoc];
+const components = [JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JPaper, JList, JLayout, JDoc];
 
 const install = function (Vue) {
   if (install.installed) return;
@@ -46,9 +47,10 @@ export default {
   JIcon,
   JButton,
   JScorll,
+  JPaper,
   JList,
   JLayout,
   JDoc,
 };
 
-export { JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JList, JLayout, JDoc };
+export { JApp, JContainer, JAppBar, JNavigationBar, JIcon, JButton, JScorll, JPaper, JList, JLayout, JDoc };

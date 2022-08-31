@@ -56,16 +56,17 @@ module.exports = function (source) {
 
   // 硬编码，有待改善
   let toc = output.join("").substring(output.join("").indexOf("<nav"), output.join("").indexOf("</nav>") + 6);
-  let text = output.join("").indexOf("<nav") != -1 ? output.join("").split(toc)[1] : output.join("");
+  toc = output.join("").indexOf("<nav") != -1 ? toc : "";
+  let text = output.join("").indexOf("<nav") != -1 ? output.join("").split(toc).join("") : output.join("");
   return `
     <template>
       <section>
         <j-doc>
           <j-row gap="20">
-            <j-col cols="19">
+            <j-col :cols="${toc == ""} ? 24 : 18" md="24" sm="24" xs="24">
               ${text}
             </j-col>
-            <j-col cols="5">
+            <j-col :cols="${toc == ""} ? 0 : 6" md="0" sm="0" xs="0">
               ${toc}
             </j-col>
           </j-row>

@@ -80,7 +80,10 @@ export default {
         },
         {
           head: { name: "组件", icon: "template" },
-          items: [{ name: "Lists(列表)", to: "/components/lists/" }],
+          items: [
+            { name: "Lists(列表)", to: "/components/lists/" },
+            { name: "Paper(纸张)", to: "/components/paper/" },
+          ],
         },
         { head: { name: "指令", icon: "code-slash" }, items: [{}] },
       ],
